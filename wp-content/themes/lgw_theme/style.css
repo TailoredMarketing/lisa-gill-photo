@@ -1,0 +1,349 @@
+/* CSS Document */
+a {
+	  color: #bfb8a9;
+}
+body {
+	background-image: url(img/bg.png);
+	background-repeat: repeat;
+	background-attachment:fixed;
+	font-size: 14px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+#home-top h1, #home-top h2 {
+	font-size: 1.4em;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
+}
+.container {
+	background-color: #fff;	
+}
+.padding {
+	margin-top: 30px;
+}
+#logo {
+	text-align: center;
+	padding: 30px;
+}
+.navbar {
+	min-height: 20px;
+	margin: 20px 0;
+}
+.navbar-collapse, .navbar-default {
+	padding: 0;
+	border: none;
+	box-shadow: none;
+	background: none;
+	background-image: none;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.active>a {
+	background: none;
+	background-image: none;	
+	box-shadow: none;
+	color: #bfb8a9;
+}
+.nav>li>a {
+	padding: 5px 17px;	
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.nav>li:last-child>a {
+	margin-right: 0px;	
+}
+.inner-box>div, .inner-box form, .box>div {
+	border: 1px solid #e6e6e6;
+	padding: 1.3em;
+}
+.inner-box .wpcf7 {
+	border: none;
+	padding: 0;
+}
+.inner-box form {
+	  background-color: #bfb8a9;
+}
+#home-top .home-contact h2 {
+	color: #716f6f;
+	font-size: 16px;
+}
+#home-top .home-contact p {
+	color: #fff;
+	text-transform: uppercase;	
+	font-size: 10px;
+}
+#home-top .home-contact .btn-primary {
+	background: none;
+	border: none;
+	background-color: #716f6f;
+	color: #fff;
+	border-radius: 0;
+}
+.three-boxes .match {
+	position: relative;
+	min-height: 180px;
+}
+.three-boxes .match.botlink a {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;	
+	right: 15px;
+	border-radius: 0px;
+  	background: #D0C5B5;
+  	color: #fff;
+	border: none;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: normal;
+	text-shadow:none;
+}
+.featured.gallery {
+	position: relative;
+	margin-top: 50px;	
+}
+.featured.gallery .gallery-head {
+	position: absolute;
+	padding: 10px 30px;
+	background-color: #bfb8a9;
+	z-index: 999;
+	top: -22px;
+	left: 75px;
+}
+.featured.gallery .gallery-head h2 {
+	color: #fff;
+	text-transform: uppercase;
+	padding: 0;
+	margin: 0;
+	font-size: 24px;
+}
+.recent-galleries {
+	border: 1px solid #e6e6e6;	
+}
+.recent-galleries a {
+	display: block;
+	height: 194px;
+	padding-top: 100px;
+	color: #bfb8a9;
+	font-size: 19px;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	padding: 88px 0;
+}
+
+.home-blog {
+	background: #bfb8a9;
+	color: #fff;
+	line-height: 1.5;
+	padding: 2em;
+}
+.home-blog time {
+	font-size: 16px;
+	letter-spacing: .5px;
+	color: #fff;
+	text-transform: uppercase;
+	
+}
+.home-blog h3 {
+	font-size: 26px;
+	letter-spacing: 1px;
+	text-transform: uppercase;	
+	margin: 0;
+	padding: 0;
+	margin-bottom: .5em;
+}
+.home-blog .excerpt {
+	margin-bottom: 1.5em;
+	letter-spacing: .5px;
+	font-size: 14px;
+	color: #fff;
+	position: relative;
+	padding-left: 80px;
+	margin: 0 0 2em;
+}
+.home-blog .btn-default {
+	margin-left: 80px;
+	border-radius: 0px;
+	background: #fff;
+	color: #bfb8a9;
+}
+
+#content h1 {
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: #716f6f;	
+}
+#content h1 strong {
+	color: #bfb8a9;
+}
+.packages {
+	padding-top: 50px;
+}
+.package_image, .about_portrait, .testimonial {
+	padding: 15px;
+    border: 1px solid #e6e6e6;
+}
+.testimonial:before {
+	background: url(img/lc.png) 0 0 no-repeat transparent;
+	content: "";
+	display: block;
+	height: 25px;
+	left: -26px;
+	position: absolute;
+	top: 30px;
+	width: 26px;
+}
+.testimonial h2 {
+	margin-top: 0;
+	font-size: 20px;
+}
+.testirow {
+	margin-bottom: 50px;
+} 
+.has_thumb {
+	position: relative;
+}
+.has_thumb img {
+	width: 100%;
+	height: auto;
+}
+#content .has_thumb h1 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: rgba( 0,0,0,0.7 );
+	color: #fff;
+	margin: 0;
+	padding: 15px;	
+}
+.single_header {
+	margin-bottom: 30px;
+}
+.divider {
+	border-right: 1px solid #e6e6e6;
+}
+.packages a:hover .package_image {
+	background: #bfb8a9;
+	border-color: #bfb8a9;
+}
+#package_footer {
+	margin-top: 75px;	
+}
+#package_footer .btn-primary {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	background: #bfb8a9;
+	background-color: #bfb8a9;
+	color: #fff;
+	border: none;
+	padding: 5px 40px;
+	text-transform: uppercase;
+}
+.package_price {
+    color: #716f6f;	
+	font-size: 25px;
+	letter-spacing: 1px;
+}
+.package_list h2, .package_list h3, .post-type-archive-gallaries #content h2 {
+	padding: 0;
+	margin: 10px 0;
+	font-size: 14px;
+}
+.package_list h2 a, .package_list h3 a, .post-type-archive-galleries #content h2 a {
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+}
+.package_list h3 a {
+	color: #716f6f;
+	font-weight: normal;
+}
+#content .gallery_title {
+	background-image: url(img/flower.png);
+	background-position: left center;
+	background-repeat: no-repeat;	
+	font-size: 20px;
+	color: #464646;
+	margin: 0;
+	padding: 30px 0;
+	padding-left: 35px;
+	
+}
+.panel-group .panel {
+	border-radius: 0;
+	-webkit-box-shadow: none;
+ 	 box-shadow: none;
+}
+.panel {
+	border-radius: 0;
+	-webkit-box-shadow: none;
+ 	 box-shadow: none;
+}
+.panel-default>.panel-heading {
+	background: #e7e7e7;
+}
+.panel-title {
+	font-weight: bold;
+}
+.panel-group {
+	margin-bottom: 5px;
+}
+.single-post article header {
+	padding-bottom: 15px;	
+}
+.blog-feat h2 {
+	min-height: 90px;
+}
+.blog-feat h2, .blog-small h2 {
+	font-size: 26px;
+	color: #000;
+	text-transform: uppercase;
+}
+.blog-small h2 {
+	font-size: 20px;
+}
+.blog-feat h2 a, .blog-small h2 a, .blog-feat p a {
+	color: #464646;
+}
+.blog-feat p a:hover {
+	text-decoration: none;
+}
+#footer a {
+	color: #716f6f;
+	font-style: italic;
+}
+#footer li {
+	padding: 4px 0;	
+}
+.form-control {
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+.home-gallery a {
+	color: #bfb8a9;
+}
+.allgall-link a {
+	color: #bfb8a9;
+	font-size: 19px;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	padding: 88px 0;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+}
+.allgall-link a:hover {
+	text-decoration: none;
+}
+.carousel-inner .item img {
+	width: 100%;
+	height: auto;
+}
+.social-icons a {
+	padding: 0 15px;
+	color: 	#bfb8a9;
+}
+.social-icons a:hover {
+	text-decoration: none;
+}
