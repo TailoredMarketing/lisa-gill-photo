@@ -255,7 +255,7 @@ class tailored_theme_class {
 			'taxonomies'		 => array ( 'slider-cat' )
 		);
 	
-		register_post_type( 'galleries', $galleryargs );
+		//register_post_type( 'galleries', $galleryargs );
 		register_post_type( 'packages', $packageargs );
 		register_post_type( 'faqs', $faqargs );
 		register_post_type( 'testimonials', $testargs );
