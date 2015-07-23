@@ -104,7 +104,7 @@ Template Name: Landing Page
             <div class="col-md-8 box">
             	<div class="match botlink">
                 	<h3><?php the_title(); ?> Packages</h3>
-                    <a href="/packages/" class="btn btn-default">Check Our Prices</a>
+                    <a href="packages/" class="btn btn-default">Check Our Prices</a>
                 </div>
             </div>
         </div>
