@@ -259,6 +259,34 @@ class tailored_theme_class {
 		register_post_type( 'home-slide', $homeslideargs );
 	}
 	
+	function register_taxonomies() {
+		$slidercatlabels = array(
+			'name'              => _x( 'Section', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Section', 'taxonomy singular name' ),
+			'search_items'      => __( 'Search Sections' ),
+			'all_items'         => __( 'All Sections' ),
+			'parent_item'       => __( 'Parent Section' ),
+			'parent_item_colon' => __( 'Parent Section:' ),
+			'edit_item'         => __( 'Edit Section' ),
+			'update_item'       => __( 'Update Section' ),
+			'add_new_item'      => __( 'Add New Section' ),
+			'new_item_name'     => __( 'New Section Name' ),
+			'menu_name'         => __( 'Section' ),
+		);
+	
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $slidercatlabels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => false,
+			'rewrite'           => false,
+		);	
+		
+		register_taxonomy( 'slider-cat', array( 'home-slide' ), $args );
+		
+	}
+	
 	function only_home_settings() {
 	   global $post;
 	   $frontpage_id = get_option('page_on_front');
