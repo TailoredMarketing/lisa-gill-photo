@@ -23,6 +23,7 @@ Template Name: Landing Page
     </div>
     <div class="featured gallery container">
     	<?php 
+			print_r( wp_get_post_terms($post->ID, 'my_taxonomy', array("fields" => "all")) );
 			global $post;
 			$args = array(
 				'post_type' 		=> 'home-slide',
