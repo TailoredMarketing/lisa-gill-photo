@@ -251,7 +251,7 @@ class tailored_theme_class {
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-slides',
 			'supports'           => array( 'title', 'thumbnail' ),
-			'taxonomies'		 => array ( 'slider-cat', 'page' )
+			'taxonomies'		 => array ( 'slider-cat' )
 		);
 	
 		register_post_type( 'galleries', $galleryargs );
@@ -286,7 +286,7 @@ class tailored_theme_class {
 			'rewrite'           => false,
 		);	
 		
-		register_taxonomy( 'slider-cat', array( 'home-slide' ), $args );
+		register_taxonomy( 'slider-cat', array( 'home-slide', 'page' ), $args );
 		
 	}
 	
