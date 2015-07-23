@@ -10,7 +10,7 @@ class tailored_theme_class {
         add_action( 'init', array( $this, 'register_sidebars' ) );
 		add_action( 'init', array( $this, 'register_shortcodes' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'register_taxonomies' ) ); 
         add_action( 'init', array( $this, 'register_menus' ) );
 		add_action( 'add_meta_boxes', array( $this, 'only_home_settings' ) ); 		
 		if ( ! isset( $content_width ) ) $content_width = 1070;
