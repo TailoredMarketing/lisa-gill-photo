@@ -250,7 +250,8 @@ class tailored_theme_class {
 			'hierarchical'       => true,
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-slides',
-			'supports'           => array( 'title', 'thumbnail' )
+			'supports'           => array( 'title', 'thumbnail' ),
+			'taxonomies'		 => array ( 'slider-cat' )
 		);
 	
 		register_post_type( 'galleries', $galleryargs );
