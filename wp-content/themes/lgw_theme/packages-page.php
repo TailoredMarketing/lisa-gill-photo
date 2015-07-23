@@ -16,9 +16,17 @@ Template Name: Packages Page
             </div>
         	<div class="col-md-14 col-md-offset-1 packages">
             	<?php
+					$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
 					$args = array(
 						'post_type'        => 'packages',
-						'orderby'		   => 'menu_order'
+						'orderby'		   => 'menu_order',
+						'tax_query' => array(
+							array(
+							  'taxonomy' => 'slider-cat',
+							  'field' => 'id',
+							  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
+							)
+						)
 					);
 					$posts_array = get_posts( $args );
 					$i = 0;
