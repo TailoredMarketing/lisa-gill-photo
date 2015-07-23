@@ -198,7 +198,8 @@ class tailored_theme_class {
 			'hierarchical'       => true,
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-lightbulb',
-			'supports'           => array( 'title', 'editor' )
+			'supports'           => array( 'title', 'editor' ),
+			'taxonomies'		 => array ( 'slider-cat' )
 		);
 		
 		$testlabels = array(
@@ -231,7 +232,8 @@ class tailored_theme_class {
 			'hierarchical'       => true,
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-megaphone',
-			'supports'           => array( 'title', 'editor', 'thumbnail' )
+			'supports'           => array( 'title', 'editor', 'thumbnail' ),
+			'taxonomies'		 => array ( 'slider-cat' )
 		);
 		
 		$homeslidelabels = array(
@@ -287,7 +289,7 @@ class tailored_theme_class {
 			'rewrite'           => false,
 		);	
 		
-		register_taxonomy( 'slider-cat', array( 'home-slide', 'page', 'packages' ), $args );
+		register_taxonomy( 'slider-cat', array( 'home-slide', 'page', 'packages', 'faqs', 'testimonials' ), $args );
 		
 	}
 	
