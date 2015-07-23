@@ -164,7 +164,8 @@ class tailored_theme_class {
 			'hierarchical'       => true,
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-cart',
-			'supports'           => array( 'title', 'editor', 'thumbnail' )
+			'supports'           => array( 'title', 'editor', 'thumbnail' ),
+			'taxonomies'		 => array ( 'slider-cat' )
 		);
 		
 		$faqlabels = array(
@@ -286,7 +287,7 @@ class tailored_theme_class {
 			'rewrite'           => false,
 		);	
 		
-		register_taxonomy( 'slider-cat', array( 'home-slide', 'page' ), $args );
+		register_taxonomy( 'slider-cat', array( 'home-slide', 'page', 'packages' ), $args );
 		
 	}
 	
