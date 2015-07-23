@@ -23,14 +23,20 @@ Template Name: Landing Page
     </div>
     <div class="featured gallery container">
     	<?php 
-			print_r( $term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all")) );
-			echo $term[0]->term_id;
+			$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
 			global $post;
 			$args = array(
 				'post_type' 		=> 'home-slide',
 				'posts_per_page' 	=> -1,
 				'orderby'			=> 'menuorder',
-				'order'				=> 'asc'
+				'order'				=> 'asc',
+				'tax_query' => array(
+					array(
+					  'taxonomy' => 'slider-cat',
+					  'field' => 'id',
+					  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
+					)
+				)
 			);
 			$posts = get_posts( $args );
 		?>
