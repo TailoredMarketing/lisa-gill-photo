@@ -24,7 +24,7 @@ Template Name: Landing Page
     <div class="featured gallery container">
     	<?php 
 			print_r( $term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all")) );
-			echo $term->term_id;
+			echo $term[0]->term_id;
 			global $post;
 			$args = array(
 				'post_type' 		=> 'home-slide',
