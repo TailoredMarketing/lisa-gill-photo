@@ -235,7 +235,7 @@ class tailored_theme_class {
 		);
 		
 		$homeslidelabels = array(
-			'name'               => _x( 'Homepage Slider', 'post type general name', 'your-plugin-textdomain' ),
+			'name'               => _x( 'Landing Page Slider', 'post type general name', 'your-plugin-textdomain' ),
 		);
 	
 		$homeslideargs = array(
