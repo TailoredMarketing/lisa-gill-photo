@@ -10,6 +10,7 @@ Template Name: Landing Page
             	<div class="match">
                     <?php 
 						if( have_posts() ) : while( have_posts() ) : the_post();
+							$title = get_the_title();
 					 		the_content(); 
 						endwhile;
 						endif;
@@ -128,7 +129,7 @@ Template Name: Landing Page
 				?>
         	<div class="col-md-14">
             	<div class="match faqlist">
-                	<h1><?php the_title(); ?> FAQs</h1>
+                	<h2><?php echo $title; ?> FAQs</h2>
                 	<?php 
 						$args = array(
 							'post_type'        => 'faqs',
