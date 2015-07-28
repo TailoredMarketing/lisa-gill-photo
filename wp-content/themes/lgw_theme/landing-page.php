@@ -134,7 +134,7 @@ Template Name: Landing Page
 						$args = array(
 							'post_type'        => 'faqs',
 							'orderby'		   => 'menu_order',
-							'posts_per_page'   => 5
+							'posts_per_page'   => 3
 						);
 						$i = 1;
 						$faqs_array = get_posts( $args );
@@ -161,6 +161,7 @@ Template Name: Landing Page
 							$i ++;
 						}
 					?>
+                    <a class="btn btn-primary" href="faq/">Read All FAQs</a>
                 </div>
             </div>
             <div class="col-md-10 home-blog match">
