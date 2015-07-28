@@ -128,6 +128,7 @@ Template Name: Landing Page
 				?>
         	<div class="col-md-14">
             	<div class="match faqlist">
+                	<h1><?php the_title(); ?> FAQs</h1>
                 	<?php 
 						$args = array(
 							'post_type'        => 'faqs',
