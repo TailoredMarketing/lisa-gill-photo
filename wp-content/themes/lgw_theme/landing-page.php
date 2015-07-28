@@ -132,7 +132,7 @@ Template Name: Landing Page
 						$args = array(
 							'post_type'        => 'faqs',
 							'orderby'		   => 'menu_order',
-							'posts_per_page'   => -1
+							'posts_per_page'   => 5
 						);
 						$i = 1;
 						$faqs_array = get_posts( $args );
