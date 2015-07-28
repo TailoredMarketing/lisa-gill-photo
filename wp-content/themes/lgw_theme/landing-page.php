@@ -129,12 +129,12 @@ Template Name: Landing Page
 				?>
         	<div class="col-md-14 match">
             	<div class=" faqlist">
-                	<h2><?php echo $title; ?> FAQs</h2>
+                	<h4><?php echo $title; ?> FAQs</h4>
                 	<?php 
 						$args = array(
 							'post_type'        => 'faqs',
 							'orderby'		   => 'menu_order',
-							'posts_per_page'   => 3
+							'posts_per_page'   => 4
 						);
 						$i = 1;
 						$faqs_array = get_posts( $args );
