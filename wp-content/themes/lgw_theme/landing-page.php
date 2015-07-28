@@ -12,6 +12,7 @@ Template Name: Landing Page
 						if( have_posts() ) : while( have_posts() ) : the_post();
 							$title = get_the_title();
 							$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
+							print_r( $term );
 					 		the_content(); 
 						endwhile;
 						endif;
