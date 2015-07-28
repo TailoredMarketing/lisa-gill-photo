@@ -127,7 +127,38 @@ Template Name: Landing Page
 						$image = wp_get_attachment_url( $thumb_id );
 				?>
         	<div class="col-md-14">
-            	<div class="match" style="background-image: url(<?php echo $image; ?>); background-size: cover;">
+            	<div class="match faqlist">
+                	<?php 
+						$args = array(
+							'post_type'        => 'faqs',
+							'orderby'		   => 'menu_order',
+							'posts_per_page'   => -1
+						);
+						$i = 1;
+						$faqs_array = get_posts( $args );
+						foreach( $faqs_array as $faq ) { 
+							setup_postdata( $faq );
+						?>
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+							  <div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="heading<?php echo $i; ?>">
+								  <h4 class="panel-title">
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>" aria-expanded="true" aria-controls="collapse<?php echo $i; ?>">
+									  <?php echo get_the_title( $faq->ID ); ?>
+									</a>
+								  </h4>
+								</div>
+								<div id="collapse<?php echo $i; ?>" class="panel-collapse collapse <?php echo ( $i == 1 ? ' in ' : '' ); ?>" role="tabpanel" aria-labelledby="heading<?php echo $i; ?>">
+								  <div class="panel-body">
+									<?php the_content( ); ?>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						<?php
+							$i ++;
+						}
+					?>
                 </div>
             </div>
             <div class="col-md-10 home-blog match">
