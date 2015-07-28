@@ -145,6 +145,7 @@ Template Name: Landing Page
 								)
 							)
 						);
+						print_r($args);
 						$i = 1;
 						$faqs_array = get_posts( $args );
 						foreach( $faqs_array as $faq ) { 
