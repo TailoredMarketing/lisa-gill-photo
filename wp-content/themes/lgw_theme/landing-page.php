@@ -121,13 +121,6 @@ Template Name: Landing Page
 						'posts_per_page' 	=> 1,
 						'orderby'			=> 'date',
 						'order'				=> 'desc',
-						'tax_query' => array(
-							array(
-							  'taxonomy' => 'slider-cat',
-							  'field' => 'id',
-							  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
-							)
-						)
 					);
 					$posts = get_posts( $args );
 					foreach( $posts as $blog ) {
@@ -144,7 +137,7 @@ Template Name: Landing Page
 							'post_type'        => 'faqs',
 							'orderby'		   => 'menu_order',
 							'posts_per_page'   => 4,
-							'tax_query' => array(
+							'tax_query' 	   => array(
 								array(
 								  'taxonomy' => 'slider-cat',
 								  'field' => 'id',
