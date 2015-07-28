@@ -161,7 +161,7 @@ Template Name: Landing Page
 							$i ++;
 						}
 					?>
-                    <a class="btn btn-primary" href="faq/">Read All FAQs</a>
+                    <a class="btn btn-default pull-right" href="faq/">Read All FAQs</a>
                 </div>
             </div>
             <div class="col-md-10 home-blog match">
