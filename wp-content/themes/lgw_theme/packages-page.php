@@ -20,6 +20,7 @@ Template Name: Packages Page
 					$args = array(
 						'post_type'        => 'packages',
 						'orderby'		   => 'menu_order',
+						'posts_per_page'   => -1,
 						'tax_query' => array(
 							array(
 							  'taxonomy' => 'slider-cat',
