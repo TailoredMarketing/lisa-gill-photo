@@ -120,7 +120,14 @@ Template Name: Landing Page
 						'post_type' 		=> 'post',
 						'posts_per_page' 	=> 1,
 						'orderby'			=> 'date',
-						'order'				=> 'desc'
+						'order'				=> 'desc',
+						'tax_query' => array(
+							array(
+							  'taxonomy' => 'slider-cat',
+							  'field' => 'id',
+							  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
+							)
+						)
 					);
 					$posts = get_posts( $args );
 					foreach( $posts as $blog ) {
@@ -136,7 +143,14 @@ Template Name: Landing Page
 						$args = array(
 							'post_type'        => 'faqs',
 							'orderby'		   => 'menu_order',
-							'posts_per_page'   => 4
+							'posts_per_page'   => 4,
+							'tax_query' => array(
+								array(
+								  'taxonomy' => 'slider-cat',
+								  'field' => 'id',
+								  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
+								)
+							)
 						);
 						$i = 1;
 						$faqs_array = get_posts( $args );
@@ -180,36 +194,7 @@ Template Name: Landing Page
 			?>
         </div>
     </div>
-    <div class="container padding">
-    	<div class="row home-gallery">
-        	<?php 
-				global $post;
-				$args = array(
-					'post_type' 		=> 'galleries',
-					'posts_per_page' 	=> 2,
-					'orderby'			=> 'date',
-					'order'				=> 'desc'
-				);
-				$posts = get_posts( $args );
-				foreach( $posts as $gallery ) {
-					$post = $gallery;
-					setup_postdata( $post );
-			?>
-        	<div class="col-md-8">
-            	<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'blog-home', array( 'class' => 'img-responsive' ) ); ?>
-                    <?php the_title(); ?>
-                </a>
-            </div>
-            <?php
-				}
-				wp_reset_postdata();
-			?>
-            <div class="col-md-8 allgall-link">
-            	<a href="/galleries/">Recent Galleries</a>
-            </div>
-        </div>
-    </div>
+    
     <div class="container padding">
    	  <?php
 	  	$content = get_post_meta( $post->ID, 'home_bottom_text', true );
