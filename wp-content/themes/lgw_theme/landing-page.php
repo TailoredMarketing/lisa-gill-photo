@@ -12,7 +12,6 @@ Template Name: Landing Page
 						if( have_posts() ) : while( have_posts() ) : the_post();
 							$title = get_the_title();
 							$term = wp_get_post_terms(get_the_ID(), 'slider-cat', array("fields" => "all"));
-							print_r( $term );
 					 		the_content(); 
 						endwhile;
 						endif;
@@ -145,7 +144,6 @@ Template Name: Landing Page
 								)
 							)
 						);
-						print_r($args);
 						$i = 1;
 						$faqs_array = get_posts( $args );
 						foreach( $faqs_array as $faq ) { 
