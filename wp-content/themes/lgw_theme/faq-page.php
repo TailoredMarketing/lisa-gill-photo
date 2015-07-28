@@ -12,7 +12,14 @@ Template Name: FAQ Page
 					$args = array(
 						'post_type'        => 'faqs',
 						'orderby'		   => 'menu_order',
-						'posts_per_page'   => -1
+						'posts_per_page'   => -1,
+						'tax_query' => array(
+							array(
+							  'taxonomy' => 'slider-cat',
+							  'field' => 'id',
+							  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
+							)
+						)
 					);
 					$i = 1;
 					$faqs_array = get_posts( $args );
