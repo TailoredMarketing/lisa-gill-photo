@@ -127,8 +127,8 @@ Template Name: Landing Page
 						$thumb_id = get_post_thumbnail_id( $blog->ID ); 
 						$image = wp_get_attachment_url( $thumb_id );
 				?>
-        	<div class="col-md-14">
-            	<div class="match faqlist">
+        	<div class="col-md-14 match">
+            	<div class=" faqlist">
                 	<h2><?php echo $title; ?> FAQs</h2>
                 	<?php 
 						$args = array(
