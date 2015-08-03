@@ -131,7 +131,8 @@ class tailored_theme_class {
 			'hierarchical'       => true,
 			'exclude_from_search'=> false,
 			'menu_icon'			 => 'dashicons-format-gallery',
-			'supports'           => array( 'title', 'editor', 'thumbnail' )
+			'supports'           => array( 'title', 'editor', 'thumbnail' ),
+			'taxonomies'		 => array ( 'slider-cat' )
 		);
 		
 		$packagelabels = array(
@@ -257,7 +258,7 @@ class tailored_theme_class {
 			'taxonomies'		 => array ( 'slider-cat' )
 		);
 	
-		//register_post_type( 'galleries', $galleryargs );
+		register_post_type( 'galleries', $galleryargs );
 		register_post_type( 'packages', $packageargs );
 		register_post_type( 'faqs', $faqargs );
 		register_post_type( 'testimonials', $testargs );
@@ -289,7 +290,7 @@ class tailored_theme_class {
 			'rewrite'           => false,
 		);	
 		
-		register_taxonomy( 'slider-cat', array( 'home-slide', 'page', 'packages', 'faqs', 'testimonials' ), $args );
+		register_taxonomy( 'slider-cat', array( 'home-slide', 'page', 'packages', 'faqs', 'testimonials', 'galleries' ), $args );
 		
 	}
 	
