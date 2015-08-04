@@ -17,7 +17,6 @@ Template Name: Packages Page
         	<div class="col-md-14 col-md-offset-1 packages">
             	<?php
 					$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
-					print_r( $term );
 					$args = array(
 						'post_type'        => 'packages',
 						'orderby'		   => 'menu_order',
