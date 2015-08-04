@@ -22,7 +22,7 @@ Template Name: Packages Page
 						'orderby'		   => 'menu_order',
 						'posts_per_page'   => -1,
 					);
-					if( !is_frontpage() ) {
+					if( !is_front_page() ) {
 						$args['tax_query'] = array(
 							array(
 							  'taxonomy' => 'slider-cat',
