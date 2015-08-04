@@ -99,7 +99,7 @@
             <div class="col-md-8 box">
             	<div class="match botlink">
                 	<h3>Packages</h3>
-                    <a href="/packages/" class="btn btn-default">Check Our Prices</a>
+                    <a href="/all-packages/" class="btn btn-default">Check Our Prices</a>
                 </div>
             </div>
         </div>
