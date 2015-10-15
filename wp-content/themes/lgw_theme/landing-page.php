@@ -22,55 +22,45 @@ Template Name: Landing Page
             </div>
         </div>
     </div>
-    <div class="featured gallery container">
-    	<?php 
-			$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
-			global $post;
-			$args = array(
-				'post_type' 		=> 'home-slide',
-				'posts_per_page' 	=> -1,
-				'orderby'			=> 'menuorder',
-				'order'				=> 'asc',
-				'tax_query' => array(
-					array(
-					  'taxonomy' => 'slider-cat',
-					  'field' => 'id',
-					  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
-					)
-				)
-			);
-			$posts = get_posts( $args );
-		?>
-    	<div class="gallery-head"><h2>Featured</h2></div>
-    	<div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
-           <div class="carousel-inner" role="listbox">
-        	<?php
-				$i = 0;
-				foreach( $posts as $slide ) {
-				$post = $slide;
-				setup_postdata( $post );
-			?>
-             
-                <div class="item <?php echo ( $i == 0 ? 'active' : '' ); $i ++; ?>">
-                	<?php the_post_thumbnail('full', array( 'class' => 'img-responsive' ) ); ?>
-                </div>
-             
+    <div class="container padding">
+    	<div class="row home-gallery">
         	<?php 
+				global $post;
+				$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
+				$args = array(
+					'post_type' 		=> 'galleries',
+					'posts_per_page' 	=> 2,
+					'orderby'			=> 'date',
+					'order'				=> 'desc',
+					'tax_query' => array(
+						array(
+						  'taxonomy' => 'slider-cat',
+						  'field' => 'id',
+						  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
+						)
+					)
+				);
+				$posts = get_posts( $args );
+				foreach( $posts as $gallery ) {
+					$post = $gallery;
+					setup_postdata( $post );
+			?>
+        	<div class="col-md-8">
+            	<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail( 'blog-home', array( 'class' => 'img-responsive' ) ); ?>
+                    <?php the_title(); ?>
+                </a>
+            </div>
+            <?php
 				}
 				wp_reset_postdata();
 			?>
-             </div>
-          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+            <div class="col-md-8 allgall-link">
+            	<a href="galleries/">Recent Galleries</a>
+            </div>
         </div>
-        
     </div>
+    
     <div class="container padding">
     	<div class="row three-boxes">
         	<div class="col-md-8 box">
@@ -168,7 +158,7 @@ Template Name: Landing Page
 							$i ++;
 						}
 					?>
-                    <a class="btn btn-default pull-right" href="faq/">Read All FAQs</a>
+                    <a class="btn btn-default pull-right" href="faqs/">Read All FAQs</a>
                 </div>
             </div>
             <div class="col-md-10 home-blog match">

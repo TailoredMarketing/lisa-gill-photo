@@ -1,52 +1,28 @@
 <?php get_header(); ?>
-	<div id="home-top" class="container">
-    	<div class="row">
-        	<div class="col-md-17 inner-box">
-            	<div class="match">
-                    <?php 
-						if( have_posts() ) : while( have_posts() ) : the_post();
-					 		the_content(); 
-						endwhile;
-						endif;
-						?>
-                </div>
-            </div>
-        	<div class="col-md-7 inner-box home-contact">
-            	<?php echo do_shortcode( '[contact-form-7 id="23068" title="Home Contact" html_class="form match"]' ); ?>
-            </div>
-        </div>
-    </div>
+	
     <div class="featured gallery container">
     	<?php 
 			$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
 			global $post;
 			$args = array(
 				'post_type' 		=> 'home-slide',
-				'posts_per_page' 	=> -1,
-				'orderby'			=> 'menuorder',
-				'order'				=> 'asc',
-				'tax_query' => array(
-					array(
-					  'taxonomy' => 'slider-cat',
-					  'field' => 'id',
-					  'terms' => $term[0]->term_id, // Where term_id of Term 1 is "1".
-					)
-				)
+				'posts_per_page' 	=> 5,
+				'orderby'			=> 'rand',
 			);
-			$posts = get_posts( $args );
+			$slides = get_posts( $args );
+			
 		?>
     	<div class="gallery-head"><h2>Featured</h2></div>
     	<div class="carousel slide" data-ride="carousel" id="carousel-example-generic">
            <div class="carousel-inner" role="listbox">
         	<?php
 				$i = 0;
-				foreach( $posts as $slide ) {
-				$post = $slide;
-				setup_postdata( $post );
+				foreach( $slides as $slide ) {
+				
 			?>
              
                 <div class="item <?php echo ( $i == 0 ? 'active' : '' ); $i ++; ?>">
-                	<?php the_post_thumbnail('full', array( 'class' => 'img-responsive' ) ); ?>
+                	<?php echo get_the_post_thumbnail($slide->ID, 'full', array( 'class' => 'img-responsive' ) ); ?>
                 </div>
              
         	<?php 
@@ -64,6 +40,23 @@
           </a>
         </div>
         
+    </div>
+    <div id="home-top" class="container">
+    	<div class="row">
+        	<div class="col-md-17 inner-box">
+            	<div class="match">
+                    <?php 
+						if( have_posts() ) : while( have_posts() ) : the_post();
+					 		the_content(); 
+						endwhile;
+						endif;
+						?>
+                </div>
+            </div>
+        	<div class="col-md-7 inner-box home-contact">
+            	<?php echo do_shortcode( '[contact-form-7 id="23068" title="Home Contact" html_class="form match"]' ); ?>
+            </div>
+        </div>
     </div>
     <div class="container padding">
     	<div class="row three-boxes">
@@ -92,8 +85,10 @@
             </div>
             <div class="col-md-8 box">
             	<div class="match botlink">
-                	<h3>Request a Brochure</h3>
-                    <a href="/contact/" class="btn btn-default">Request a Brochure</a>
+                	<h3>Wedding Photography</h3>
+                    <p><img src="http://www.lgfineartweddings.com/wp-content/themes/lgw_theme/img/logo.png" style="width: 120px; height: auto; float: right; padding-left: 10px; padding-right: 10px; ">Looking for some fabulous wedding photography, visit our sister site LG Fine Art Weddings</p>
+                    
+                    <a href="http://www.lgfineartweddings.com/" class="btn btn-default">Visit LG Fine Art Weddings</a>
                 </div>
             </div>
             <div class="col-md-8 box">
@@ -126,7 +121,7 @@
                 </div>
             </div>
             <div class="col-md-10 home-blog match">
-            	<time>February 26, 2015</time>
+            	<time><?php the_date(); ?></time>
                 <h3><?php the_title(); ?></h3>
                 <div class="excerpt">
                 	<?php the_excerpt(); ?>
@@ -139,36 +134,7 @@
 			?>
         </div>
     </div>
-    <div class="container padding">
-    	<div class="row home-gallery">
-        	<?php 
-				global $post;
-				$args = array(
-					'post_type' 		=> 'galleries',
-					'posts_per_page' 	=> 2,
-					'orderby'			=> 'date',
-					'order'				=> 'desc'
-				);
-				$posts = get_posts( $args );
-				foreach( $posts as $gallery ) {
-					$post = $gallery;
-					setup_postdata( $post );
-			?>
-        	<div class="col-md-8">
-            	<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail( 'blog-home', array( 'class' => 'img-responsive' ) ); ?>
-                    <?php the_title(); ?>
-                </a>
-            </div>
-            <?php
-				}
-				wp_reset_postdata();
-			?>
-            <div class="col-md-8 allgall-link">
-            	<a href="/galleries/">Recent Galleries</a>
-            </div>
-        </div>
-    </div>
+    
     <div class="container padding">
    	  <?php
 	  	$content = get_post_meta( $post->ID, 'home_bottom_text', true );

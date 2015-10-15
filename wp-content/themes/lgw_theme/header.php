@@ -14,7 +14,7 @@
   </head>
   <body <?php body_class(); ?>>
 	<header id="header" class="container">
-        <div id="logo"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo.png" width="229" height="113" alt=""/></div>
+        <div id="logo"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo.png" width="220" height="132"  alt=""/></div>
         <nav id="nav" class="navbar navbar-default">
         	<div class="container">
             	<div class="row">

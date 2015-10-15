@@ -25,11 +25,12 @@ body {
 }
 #logo {
 	text-align: center;
-	padding: 30px;
+	padding: 15px;
 }
 .navbar {
 	min-height: 20px;
-	margin: 20px 0;
+	margin: 0;
+    margin-bottom: 15px;
 }
 .navbar-collapse, .navbar-default {
 	padding: 0;
@@ -81,7 +82,7 @@ body {
 }
 .three-boxes .match {
 	position: relative;
-	min-height: 180px;
+	min-height: 220px;
 }
 .three-boxes .match.botlink a {
 	position: absolute;
@@ -99,6 +100,7 @@ body {
 }
 .featured.gallery {
 	position: relative;
+	margin-bottom: 50px;
 	margin-top: 50px;	
 }
 .featured.gallery .gallery-head {

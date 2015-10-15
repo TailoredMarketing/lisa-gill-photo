@@ -9,6 +9,7 @@ Template Name: FAQ Page
         	<div class="col-md-24 ">
             	<h1><?php the_title(); ?></h1>
             	<?php 
+					$term = wp_get_post_terms($post->ID, 'slider-cat', array("fields" => "all"));
 					$args = array(
 						'post_type'        => 'faqs',
 						'orderby'		   => 'menu_order',
